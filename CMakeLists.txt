@@ -3,4 +3,4 @@ project(ProvaIntermedia)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(ProvaIntermedia main.cpp)
+add_executable(ProvaIntermedia src/main.cpp)
