@@ -74,7 +74,7 @@ bool Book::operator==(const Book &otherBook) const {
     return (isbn==otherBook.isbn);
 }
 bool Book::operator!=(const Book &otherBook) const {
-    return (isbn==otherBook.isbn);
+    return (isbn!=otherBook.isbn);
 }
 
 std::ostream& operator<<(std::ostream& output, const Book& book){
