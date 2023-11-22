@@ -47,6 +47,13 @@ private:
     std::string errorMessage;
 };
 
+class BookshelfDimension : public std::exception{
+public:
+    BookshelfDimension(const std::string& message) : errorMessage(message){};
+private:
+    std::string errorMessage;
+};
+
 //Date viene già gestita nella classe date//
 
 #endif //PROVAINTERMEDIA_EXCEPTIONS_H

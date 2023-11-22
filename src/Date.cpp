@@ -11,7 +11,7 @@ Date::Date(const Date &d_) {
     d=d_.getDay();
 }
 
-bool Date::chekDayBound(int day) {
+bool Date::checkDayBound(int day) {
     calculateFebruaryBound();
     int numMonth = static_cast<int>(m);
     if(!(d>=1 && d<=dayBounds[numMonth-1]))

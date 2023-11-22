@@ -24,7 +24,7 @@ public:
     void setDay(int d_);
 private:
     int dayBounds[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    bool chekDayBound(int day);
+    bool checkDayBound(int day);
     void calculateFebruaryBound();
     int d;
     Month m;

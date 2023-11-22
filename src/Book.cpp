@@ -91,6 +91,5 @@ std::ostream& operator<<(std::ostream& output, const Book& book){
     output << "Author: \t" << book.getAuthorName() << " " << book.getAuthorSurname() << std::endl;
     output << "Date CR: \t" << book.getDate().getYear().getYear() << "/" << static_cast<int>(book.getDate().getMonth()) << "/" << book.getDate().getDay() << std::endl;
     output << "OnLoan: \t" << ((book.isOnLoan()) ? "unavailable":"available") << std::endl;
-
     return output;
 }
