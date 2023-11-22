@@ -3,8 +3,8 @@
 
 Book::Book() : onLoan(false){}
 
-Book::Book(std::string i, std::string t, std::string aN, std::string aS)
-    : isbn(i), title(t), authorName(aN), authorSurname(aS), /*Date,*/onLoan(false) {
+Book::Book(std::string i, std::string t, std::string aN, std::string aS, Date d)
+    : isbn(i), title(t), authorName(aN), authorSurname(aS), copyrightDate(d), onLoan(false) {
 
     if(isbn.length() != 13)
         throw IsbnLength("");
@@ -28,6 +28,9 @@ std::string Book::getAuthorName() const {
 }
 std::string Book::getAuthorSurname() const {
     return authorSurname;
+}
+Date Book::getDate() const{
+    return copyrightDate;
 }
 bool Book::isOnLoan() const {
     return onLoan;
@@ -66,6 +69,11 @@ bool Book::setAuthorSurname(std::string s) {
         return true;
     }
 }
+void Book::setDate(Date d) {
+    copyrightDate.setYear(d.getYear());
+    copyrightDate.setMonth(d.getMonth());
+    copyrightDate.setDay(d.getDay());
+}
 void Book::setOnLoan() {
     onLoan=!onLoan;
 }
@@ -78,11 +86,11 @@ bool Book::operator!=(const Book &otherBook) const {
 }
 
 std::ostream& operator<<(std::ostream& output, const Book& book){
-    output << "Isbn: \t" << book.getIsbn() << std::endl;
-    output << "Title: \t" << book.getTitle() << std::endl;
+    output << "Isbn: \t\t" << book.getIsbn() << std::endl;
+    output << "Title: \t\t" << book.getTitle() << std::endl;
     output << "Author: \t" << book.getAuthorName() << " " << book.getAuthorSurname() << std::endl;
-    //output << "Date CR: \t" << book.getDate() << std::endl;
-    output << "OnLoan: \t" << ((book.isOnLoan()) ? "available":"unavailable") << std::endl;
+    output << "Date CR: \t" << book.getDate().getYear().getYear() << "/" << static_cast<int>(book.getDate().getMonth()) << "/" << book.getDate().getDay() << std::endl;
+    output << "OnLoan: \t" << ((book.isOnLoan()) ? "unavailable":"available") << std::endl;
 
     return output;
 }

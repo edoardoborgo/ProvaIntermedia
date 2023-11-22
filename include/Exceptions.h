@@ -33,6 +33,20 @@ private:
     std::string errorMessage;
 };
 
+class InvalidYear : public std::exception{
+public:
+    InvalidYear(const std::string& message) : errorMessage(message){};
+private:
+    std::string errorMessage;
+};
+
+class InvalidDay : public std::exception{
+public:
+    InvalidDay(const std::string& message) : errorMessage(message){};
+private:
+    std::string errorMessage;
+};
+
 //Date viene già gestita nella classe date//
 
 #endif //PROVAINTERMEDIA_EXCEPTIONS_H

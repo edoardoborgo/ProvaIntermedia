@@ -3,20 +3,21 @@
 #define PROVAINTERMEDIA_BOOK_H
 
 #include <string>
+#include "Date.h"
 #include "Exceptions.h"
 
 class Book{
 public:
     // Costruttori, Distruttori, e Funzioni Membro
     Book();
-    Book(std::string isbn, std::string title, std::string authorName, std::string authorSurname);
+    Book(std::string i, std::string t, std::string aN, std::string aS, Date d);
 
     //Getters
     std::string getIsbn() const;
     std::string getTitle() const;
     std::string getAuthorName() const;
     std::string getAuthorSurname() const;
-    //Date getDate() const; TODO
+    Date getDate() const;
     bool isOnLoan() const;
 
     //Setters
@@ -24,7 +25,7 @@ public:
     bool setTitle(std::string t);
     bool setAuthorName(std::string n);
     bool setAuthorSurname(std::string s);
-    ///... setDate(); TODO
+    void setDate(Date d);
     void setOnLoan();
 
     //Function Members
@@ -37,7 +38,7 @@ private:
     std::string title;
     std::string authorName;
     std::string authorSurname;
-    //Date copyrightDate TODO
+    Date copyrightDate;
     bool onLoan;
 };
 
