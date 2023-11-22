@@ -1,16 +1,13 @@
 #include "../include/BookShelf.h"
 
-Bookshelf::Bookshelf() : capacity{0}, books{nullptr}{
-    set_size(0);
-}
+Bookshelf::Bookshelf() : sz{0}, capacity{0}, books{nullptr}{}
 
-Bookshelf::Bookshelf(int capacity_) : capacity{capacity_}, books{new Book[capacity_]}{
+Bookshelf::Bookshelf(int capacity_) : sz{0}, capacity{capacity_}, books{new Book[capacity_]}{
     if (capacity < 1)
         throw BookshelfDimension("");
-    set_size(0);
 }
 
-Bookshelf :: Bookshelf(const Bookshelf& arg) : sz{arg.sz}, books{new Book[arg.sz]}{
+Bookshelf :: Bookshelf(const Bookshelf& arg) : sz{arg.get_size()}, capacity{arg.get_capacity()}, books{new Book[arg.get_size()]}{
     std::copy(arg.books, arg.books+sz, books);
 }
 Book& Bookshelf::operator[](int index){
@@ -51,7 +48,7 @@ void Bookshelf::pop_back(){
     }
 }
 
-Book* Bookshelf::reserve(int new_capacity){
+void Bookshelf::reserve(int new_capacity){
     if(new_capacity>capacity){
         capacity = new_capacity;
         Book* newBooks = new Book[new_capacity];

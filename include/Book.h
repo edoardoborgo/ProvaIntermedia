@@ -10,7 +10,8 @@ class Book{
 public:
     // Costruttori, Distruttori, e Funzioni Membro
     Book();
-    Book(std::string i, std::string t, std::string aN, std::string aS, Date d);
+    Book(std::string aN, std::string aS, std::string t, std::string i);
+    Book(std::string aN, std::string aS, std::string t, std::string i, Date d);
 
     //Getters
     std::string getIsbn() const;
@@ -19,6 +20,8 @@ public:
     std::string getAuthorSurname() const;
     Date getDate() const;
     bool isOnLoan() const;
+    void setLending();
+    void setReturned();
 
     //Setters
     bool setIsbn(std::string i);
@@ -26,7 +29,6 @@ public:
     bool setAuthorName(std::string n);
     bool setAuthorSurname(std::string s);
     void setDate(Date d);
-    void setOnLoan();
 
     //Function Members
     bool operator==(const Book& otherBook) const;
@@ -40,6 +42,9 @@ private:
     std::string authorSurname;
     Date copyrightDate;
     bool onLoan;
+
+    //Setter
+    void setOnLoan();
 };
 
 std::ostream& operator<<(std::ostream& output, const Book& book);

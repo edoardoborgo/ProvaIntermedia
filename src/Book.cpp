@@ -3,8 +3,21 @@
 
 Book::Book() : onLoan(false){}
 
-Book::Book(std::string i, std::string t, std::string aN, std::string aS, Date d)
-    : isbn(i), title(t), authorName(aN), authorSurname(aS), copyrightDate(d), onLoan(false) {
+Book::Book(std::string aN, std::string aS, std::string t, std::string i)
+        : authorName(aN), authorSurname(aS), title(t), isbn(i), copyrightDate(Date(Year(), Date::Month::January, 1)), onLoan(false) {
+
+    if(isbn.length() != 13)
+        throw IsbnLength("");
+    if(title.length()==0)
+        throw BlankTitle("");
+    if(authorName.length()==0)
+        throw BlankAuthorName("");
+    if(authorSurname.length()==0)
+        throw BlankAuthorSurname("");
+}
+
+Book::Book(std::string aN, std::string aS, std::string t, std::string i, Date d)
+    : authorName(aN), authorSurname(aS), title(t), isbn(i), copyrightDate(d), onLoan(false) {
 
     if(isbn.length() != 13)
         throw IsbnLength("");
@@ -34,6 +47,16 @@ Date Book::getDate() const{
 }
 bool Book::isOnLoan() const {
     return onLoan;
+}
+void Book::setLending(){
+    if(isOnLoan())
+        throw BookNotLending("");
+    setOnLoan();
+}
+void Book::setReturned(){
+    if(!isOnLoan())
+        throw BookNotReturned("");
+    setOnLoan();
 }
 
 //Setters
@@ -74,7 +97,7 @@ void Book::setDate(Date d) {
     copyrightDate.setMonth(d.getMonth());
     copyrightDate.setDay(d.getDay());
 }
-void Book::setOnLoan() {
+void Book::setOnLoan(){
     onLoan=!onLoan;
 }
 

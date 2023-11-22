@@ -4,6 +4,7 @@
 #include "Book.h"
 #include "Exceptions.h"
 #include <algorithm>
+#include <stdexcept>
 
 class Bookshelf{
 public:

@@ -1,7 +1,7 @@
 #include "../include/Date.h"
 
 Date::Date(Year y_, Date::Month m_, int d_) : y(y_),m(m_),d{d_} {
-    if(!chekDayBound(d))
+    if(!checkDayBound(d))
         throw InvalidDay("");
 }
 

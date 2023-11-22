@@ -33,6 +33,20 @@ private:
     std::string errorMessage;
 };
 
+class BookNotLending : public std::exception{
+public:
+    BookNotLending(const std::string& message) : errorMessage(message){};
+private:
+    std::string errorMessage;
+};
+
+class BookNotReturned : public std::exception{
+public:
+    BookNotReturned(const std::string& message) : errorMessage(message){};
+private:
+    std::string errorMessage;
+};
+
 class InvalidYear : public std::exception{
 public:
     InvalidYear(const std::string& message) : errorMessage(message){};
