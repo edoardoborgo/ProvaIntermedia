@@ -18,6 +18,7 @@ public:
     Year getYear() const { return y; };
     Month getMonth() const { return m; };
     int getDay() const { return d; };
+
     //Setters
     void setYear(Year y_);
     void setMonth(Month m_);

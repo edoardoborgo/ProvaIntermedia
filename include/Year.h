@@ -9,8 +9,8 @@ class Year{
     static constexpr int max = 2200;
 
 public:
-    Year() : year{min}{};
-    Year(int y) : year{y}{
+    Year() : year{min}{};       //costruttore anno di default:      year=1800
+    Year(int y) : year{y}{      //costruttore con anno specificato: year=y
         if(y<=min || y>=max)
             throw InvalidYear("");
     };

@@ -10,8 +10,8 @@ class Book{
 public:
     // Costruttori, Distruttori, e Funzioni Membro
     Book();
-    Book(std::string aN, std::string aS, std::string t, std::string i);
-    Book(std::string aN, std::string aS, std::string t, std::string i, Date d);
+    Book(std::string aN, std::string aS, std::string t, std::string i);             //costruttore senza data di copyright -> viene inizializzata ad una data di default modificabile
+    Book(std::string aN, std::string aS, std::string t, std::string i, Date d);     //costruttore con data copyright specificata
 
     //Getters
     std::string getIsbn() const;
@@ -23,12 +23,8 @@ public:
     void setLending();
     void setReturned();
 
-    //Setters
-    bool setIsbn(std::string i);
-    bool setTitle(std::string t);
-    bool setAuthorName(std::string n);
-    bool setAuthorSurname(std::string s);
-    void setDate(Date d);
+    //Date setter
+    void setDate(Date d); //public cosi' se un libro viene inizializzato senza data di copyright si può modificare più tardi
 
     //Function Members
     bool operator==(const Book& otherBook) const;
@@ -43,7 +39,11 @@ private:
     Date copyrightDate;
     bool onLoan;
 
-    //Setter
+    //Setters
+    bool setIsbn(std::string i);
+    bool setTitle(std::string t);
+    bool setAuthorName(std::string n);
+    bool setAuthorSurname(std::string s);
     void setOnLoan();
 };
 

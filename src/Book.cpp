@@ -5,6 +5,7 @@ Book::Book() : onLoan(false){}
 
 Book::Book(std::string aN, std::string aS, std::string t, std::string i)
         : authorName(aN), authorSurname(aS), title(t), isbn(i), copyrightDate(Date(Year(), Date::Month::January, 1)), onLoan(false) {
+    //data copyright iniziallizzata ad una data di default: January 1, 1800
 
     if(isbn.length() != 13)
         throw IsbnLength("");

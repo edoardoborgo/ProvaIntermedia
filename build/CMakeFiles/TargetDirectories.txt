@@ -1,0 +1,3 @@
+C:/Users/borgo/Documents/GitHub/ProvaIntermedia/build/CMakeFiles/ProvaIntermedia.dir
+C:/Users/borgo/Documents/GitHub/ProvaIntermedia/build/CMakeFiles/edit_cache.dir
+C:/Users/borgo/Documents/GitHub/ProvaIntermedia/build/CMakeFiles/rebuild_cache.dir

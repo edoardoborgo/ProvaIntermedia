@@ -11,7 +11,7 @@ public:
     //costruttori
     Bookshelf();
     Bookshelf(int capacity);
-    Bookshelf(const Bookshelf&);
+    Bookshelf(const Bookshelf&);    //costruttore di copia
 
     //Function Members
     Book &operator[](int index);
@@ -30,9 +30,9 @@ public:
 
 private:
     Book* books;
-    int sz;       //numero di elementi inseriti
-    int capacity; //dimensione del buffer
-    void reserve(int n);
+    int sz;                 //numero di elementi inseriti
+    int capacity;           //dimensione del buffer
+    void reserve(int n);    //verifica che capacity sia sufficiente per contenere un nuovo book, se non e' cosi' rialloca il vettore
 
     //Setters
     void set_size(int s);

@@ -50,7 +50,7 @@ int main() {
     try{
         shelf1[0].setLending();
         std::cout<<"Libro disponibile per il prestito."<<std::endl;
-    }catch(std::exception e){
+    }catch(BookNotReturned e){
         std::cout<<"Libro non disponibile per il prestito."<<std::endl;
     }
     std::cout<<std::endl;
@@ -63,6 +63,8 @@ int main() {
     for(int i=0; i<shelf2.get_size(); i++)
         std::cout<<shelf2.at(i)<<std::endl;
     //------------------------------------//
+
+
 
     return 0;
 }

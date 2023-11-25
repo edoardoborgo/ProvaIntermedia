@@ -1,0 +1,6 @@
+# ninja log v5
+16	996	7225424339428103	CMakeFiles/ProvaIntermedia.dir/src/BookShelf.cpp.obj	fb3dbfe43b2a9c1c
+9	1010	7225424339659670	CMakeFiles/ProvaIntermedia.dir/src/Date.cpp.obj	3797e6cabd0aaa5f
+0	1042	7225424340770940	CMakeFiles/ProvaIntermedia.dir/src/main.cpp.obj	ab6df13d605ceeed
+5	1043	7225424342018702	CMakeFiles/ProvaIntermedia.dir/src/Book.cpp.obj	5f175f1ef6e18167
+1043	1279	7225424343990716	ProvaIntermedia.exe	ce6270374535c01a
